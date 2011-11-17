@@ -1,0 +1,58 @@
+---
+layout: default
+description: A description about my blog homepage
+---
+
+
+{% for post in site.posts %}
+<div id="{{ post.id }}" class="{{ post.id }} post type-post status-publish format-standard hentry">
+	<div class="entry-meta">
+		{{ post.date | date_to_string }}
+	</div><!-- .entry-meta -->
+	<div class="entry-body">
+		<h2 class="entry-title">
+			<a href="{{ post.url }}" title="{{ post.title }}" rel="bookmark">{{ post.title }}</a>
+		</h2>
+
+		<div class="entry-content">
+			{{ post.content }}
+		</div><!-- .entry-content -->
+
+		<div class="entry-utility">
+            此文
+			<span class="cat-links">
+				<span class="entry-utility-prep entry-utility-prep-cat-links">发表在</span> 
+                    {% for category in post.categories %}
+                    <a rel="category tag">{{ category }}</a>
+                    {% endfor %}
+                </span>
+                分类
+			<span class="meta-sep">|</span>
+			<span class="tag-links">
+				<span class="entry-utility-prep entry-utility-prep-tag-links">贴了</span> 
+                    {% for tag in post.tags %}
+                    <a rel="tag">{{ tag }}</a>
+                    {% endfor %}
+                </span>
+                标签
+			<span class="meta-sep">|</span>
+			<span class="comments-link">
+                <a href="{{ post.url }}#comments" title="《{{ post.title }}》上的评论">留下评论</a>
+            </span>
+		</div><!-- .entry-utility -->
+	</div>
+</div><!-- #post-## -->
+{% endfor %}
+
+<!--
+<div id="pages">
+	<h2>Pages</h2>
+	<ul>
+		{% for page in site.html_pages %}
+		{% if page.title %}
+        <li><a href="{{ page.url }}">{{ page.title }}</a></li>
+		{% endif %}
+		{% endfor %}
+	</ul>
+</div>
+-->

@@ -1,0 +1,67 @@
+---
+layout: default
+---
+
+<div id="nav-above" class="navigation">
+    {% if page.previous.url %}
+	<div class="nav-previous">
+        <a rel="prev" href="{{ page.previous.url }}"><span class="meta-nav">←</span>{{ page.previous.title }}</a>
+    </div>
+    {% endif %}
+    {% if page.next.url %}
+	<div class="nav-next">
+        <a rel="next" href="{{ page.next.url }}">{{ page.next.title }}<span class="meta-nav">→</span></a>
+    </div>
+    {% endif %}
+</div><!-- #nav-above -->
+
+<div id="{{ page.id }}" class="{{ page.id }} post type-post status-publish format-standard hentry single">
+
+	<div class="entry-meta">
+        {{ page.date | date_to_string }}
+	</div><!-- .entry-meta -->
+
+	<div class="entry-body">
+	    <h1 class="entry-title">{{ page.title }}</h1>
+	    <div class="entry-content">
+		{{ content }}
+	    </div><!-- .entry-content -->
+        <div class="entry-utility">
+            此文
+			<span class="cat-links">
+				<span class="entry-utility-prep entry-utility-prep-cat-links">发表在</span> 
+                    {% for category in page.categories %}
+                    <a rel="category tag">{{ category }}</a>
+                    {% endfor %}
+                </span>
+                分类
+			<span class="meta-sep">|</span>
+			<span class="tag-links">
+				<span class="entry-utility-prep entry-utility-prep-tag-links">贴了</span> 
+                    {% for tag in page.tags %}
+                    <a rel="tag">{{ tag }}</a>
+                    {% endfor %}
+                标签
+            </span>
+			<span class="meta-sep">|</span>
+			<span class="comments-link">
+                <a href="{{ page.url }}#comments" title="《{{ page.title }}》上的评论">留下评论</a>
+            </span>
+	    </div><!-- .entry-utility -->
+    </div>
+</div><!-- #post-## -->
+
+<div id="nav-below" class="navigation">
+    {% if page.previous.url %}
+	<div class="nav-previous">
+        <a rel="prev" href="{{ page.previous.url }}"><span class="meta-nav">←</span>{{ page.previous.title }}</a>
+    </div>
+    {% endif %}
+    {% if page.next.url %}
+	<div class="nav-next">
+        <a rel="next" href="{{ page.next.url }}">{{ page.next.title }}<span class="meta-nav">→</span></a>
+    </div>
+    {% endif %}
+</div><!-- #nav-below -->
+
+{% include disqus.html %}

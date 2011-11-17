@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="zh-CN">
+	<head>
+		<meta charset="UTF-8" />
+		<title>{% if page.title %}{{ page.title }} - {% endif %}{{ site.title }}</title>
+		<link rel="stylesheet" type="text/css" media="all" href="/static/stylesheets/style.css" />
+		<link rel="stylesheet" type="text/css" media="all" href="/static/stylesheets/syntax.css" />
+	</head>
+	<body class="home blog">
+		<div id="wrapper" class="hfeed">
+			<div id="header">
+				<div id="masthead">
+					<div id="branding" role="banner">
+						<h1 id="site-title">
+							<span>
+								<a href="/" title="{{ site.title }}" rel="home">{{ site.title }}</a>
+							</span>
+						</h1>
+						<div id="site-description"></div>
+					</div>
+				</div>
+			</div>
+			<div id="main">
+				<div id="container">
+					<div id="access" role="navigation">
+						<div class="skip-link screen-reader-text"><a href="#content" title="跳至正文">跳至正文</a></div>
+						<div class="menu">
+							<ul>
+								<li class="current_page_item">
+									<a href="/" title="首页">首页</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div id="content" role="main">
+						{{ content }}
+					</div>
+				</div>
+				{% include sidebar.html %}
+			</div>
+			<div id="footer" role="contentinfo">
+				<div id="colophon">
+					<div id="site-info">
+						<a href="/" title="Infong" rel="home">Infong</a>
+					</div>
+					<div id="site-generator">
+                        Powered by <a href="http://github.com" target=_blank>Github</a> and 
+						Generate by <a href="https://github.com/mojombo/jekyll" target="_blank" rel="generator">Jekyll</a>
+					</div>
+				</div>
+			</div>
+		</div>
+    {% if site.google_analytics %}
+    <!-- google analytics async -->
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', '{{ site.google_analytics.account }}']);
+      _gaq.push(['_trackPageview']);
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+    {% endif %}
+	</body>
+</html>

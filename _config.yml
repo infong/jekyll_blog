@@ -1,0 +1,19 @@
+safe: true
+pygments: true
+permalink: /archives/:title/
+
+author: Infong
+title: A good memory as bad written.
+email: clarelyf@gmail.com
+
+# feedburner:
+#   id: feedburnerid
+
+#google_analytics:
+#  account: 
+
+github:
+  username: infong
+
+#disqus:
+#   id: keeprolling
