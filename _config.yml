@@ -9,11 +9,11 @@ email: clarelyf@gmail.com
 # feedburner:
 #   id: feedburnerid
 
-#google_analytics:
-#  account: 
+google_analytics:
+  account: UA-24623558-3
 
 github:
   username: infong
 
-#disqus:
-#   id: keeprolling
+disqus:
+   id: infong
