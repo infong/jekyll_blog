@@ -1,7 +1,10 @@
 ---
 layout: post
 title: 我也弄个 jekyll 试试
----
+author: Infong
+category: Uncategorized
+tags: [test]
+---   
 
 最近也看了一些 markdown 的东西，同时也试着写了几个文档，感觉它写文档、日志之类的确实很舒服。
 

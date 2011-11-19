@@ -1,6 +1,6 @@
 safe: true
 pygments: true
-permalink: /archives/:title/
+permalink: /:categories/:title.html
 
 author: Infong
 title: A good memory as bad written.
