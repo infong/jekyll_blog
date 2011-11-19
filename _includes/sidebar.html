@@ -1,20 +1,19 @@
-<div id="primary" class="widget-area" role="complementary">
-	<ul class="xoxo">
-		<li id="recent-posts-2" class="widget-container widget_recent_entries">
-			<h3 class="widget-title">近期文章</h3>
-			<ul>
+    <div class="grid_4" id="sidebar">
+
+                <div class="widget">
+            <h3>New Posts</h3>
+            <ul>
             {% for post in site.posts limit:5 %}
-				<li>
+                <li>
                 <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
                 </li>
             {% endfor %}
-			</ul>
-
-		</li>
-		<li id="linkcat-2" class="widget-container widget_mylinkorder"><h3 class="widget-title">链接</h3>
-			<ul class='xoxo blogroll'>
-				<li><a href="http://infong.org" title="infong.org" target="_blank">我的网站</a></li>
-			</ul>
-		</li>
-	</ul>
-</div>
+        </div>
+            
+        <div class="widget">
+            <h3>Blogroll</h3>
+            <ul>
+                <li><a href="http://infong.org" title="infong.org" target="_blank">我的网站</a></li>
+            </ul>
+        </div>
+    </div><!-- end #sidebar -->
