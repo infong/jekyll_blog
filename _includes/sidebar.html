@@ -1,6 +1,6 @@
     <div class="grid_4" id="sidebar">
 
-                <div class="widget">
+       <div class="widget">
             <h3>New Posts</h3>
             <ul>
             {% for post in site.posts limit:5 %}
@@ -8,8 +8,16 @@
                 <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
                 </li>
             {% endfor %}
+       </div>
+       <div class="widget">
+            <h3>Categorys</h3>
+            <ul>
+                <li><a href="/categorys/Code.html">C | CPP | JAVA</a></li>
+                <li><a href="/categorys/spl.html">PHP | Python | Perl | Ruby | Bash</a></li>
+                <li><a href="/categorys/os.html">Linux | BSD | Unix</a></li>
+                <li><a href="/categorys/virtualization.html">Cloud | Virtualization | VPS</a></li>
+            </ul>
         </div>
-            
         <div class="widget">
             <h3>Blogroll</h3>
             <ul>

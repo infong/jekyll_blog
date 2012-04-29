@@ -1,0 +1,27 @@
+---
+layout: nil
+---
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+ 
+ <title>Tech Notes</title>
+ <link href="http://tech.infong.net/atom.xml" rel="self"/>
+ <link href="http://tech.infong.net/"/>
+ <updated>{{ site.time | date_to_xmlschema }}</updated>
+ <id>http://tech.infong.net</id>
+ <author>
+   <name>infong</name>
+   <email>infong.lou@gmail.com</email>
+ </author>
+ 
+{% for post in site.posts limit:5 %} 
+ <entry>
+   <title>{{ post.title }}</title>
+   <link href="http://tech.infong.net{{ post.url }}"/>
+   <updated>{{ post.date | date_to_xmlschema }}</updated>
+   <id>id:{{ post.id }}</id>
+   <content type="html">{{ post.content | xml_escape }}</content>
+ </entry>
+{% endfor %}
+ 
+</feed>

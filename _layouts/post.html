@@ -1,15 +1,16 @@
 ---
 layout: default
+feed: atom.xml
 ---
 
        <div class="post {{ page.id }}" id="{{ page.id }}">
 			<h2 class="entry_title">
-				<h1 class="entry-title">{{ page.title }}</h1>
+				<h1 class="entry-title"><a href="#">{{ page.title }}</a></h1>
 			</h2>
 			<p class="entry_data">
 				<span>Author: {{ page.author }}</span>
 				<span>Date: {{ page.date | date_to_string }}</span>
-				<span>Category: {% for category in page.categories %}<a rel="category tag">{{ category }}</a>{% endfor %}</span>
+				<span>Category: {% for category in page.categories %}<a href="/categorys/{{ category }}.html" rel="category tag">{{ category }}</a>{% endfor %}</span>
 				<a href="{{ page.url }}#comments" title="Comments of {{ page.title }}">Comments</a>
 			</p>
 			{{ content }}

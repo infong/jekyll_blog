@@ -3,6 +3,15 @@
 	<head profile="http://gmpg.org/xfn/11">
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<title>{% if page.title %}{{ page.title }} - {% endif %}{{ site.title }}</title>
+		<meta name="description" content="Post various computer-related technology and original articles, a good memory as bad written." />
+{% if page.keywords %}
+		<meta name="keywords" content="{{ page.keywords }}">
+{% else %}
+		<meta name="keywords" content="computer-related, Open source, PHP, Linux, Phyton" />
+{% endif %}
+{% if page.feed %}
+		<link rel="alternate" type="application/atom+xml" href="{{ page.feed }}" title="RSS feed" />
+{% endif %}
 		<link rel="stylesheet" type="text/css" media="all" href="/static/stylesheets/style.css" />
 		<link rel="stylesheet" type="text/css" media="all" href="/static/stylesheets/syntax.css" />
 	</head>
@@ -11,17 +20,15 @@
 		<div id="header" class="container_16 clearfix">
 			<div id="logo">
 				<h1><a href="/" title="{{ site.title }}" rel="home">{{ site.title }}</a></h1>
+                <p class="description">A good memory as bad written.</p>
+
 			</div>
 		</div><!-- end #header -->
 
 		<div id="nav_box" class="clearfix">
-			<ul class="container_16 clearfix" id="nav_menu">
-				<li class="current"><a href="/" title="{{ site.title }}" rel="home">Home</a></li>
-{% for page in site.html_pages %}
-{% if page.title %}
-				<li><a href="{{ page.url }}">{{ page.title }}</a></li>
-{% endif %}
-{% endfor %}
+			<ul class="clearfix" id="nav_menu">
+				<li><a href="/" title="{{ site.title }}" rel="home">Home</a></li>
+				<li><a href="/category.html">Categorys</a></li>
 			</ul>
 		</div>
 
@@ -34,7 +41,7 @@
 	
 
 			<div class="grid_14" id="footer">
-				<a href="/" title="Infong" rel="home">Infong</a> is Generate by <a href="https://github.com/mojombo/jekyll" target="_blank" rel="generator">Jekyll</a><br />
+				<a href="/" title="Tech Notes" rel="home">Tech Notes</a> is Generate by <a href="https://github.com/mojombo/jekyll" target="_blank" rel="generator">Jekyll</a><br />
 			</div><!-- end #footer -->
 		</div>
 

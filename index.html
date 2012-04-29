@@ -1,20 +1,31 @@
 ---
 layout: default
 description: A description about my blog homepage
+feed: atom.xml
 ---
 
-{% for post in site.posts %}
+{% for post in paginator.posts  %}
 		<div class="post">
 			<h2 class="entry_title"><a href="{{ post.url }}" title="{{ post.title }}" rel="bookmark">{{ post.title }}</a></h2>
 			<p class="entry_data">
 				<span>Author: {{ post.author }}</span>
 				<span>Date: {{ post.date | date_to_string }}</span>
-				<span>Category: {% for category in post.categories %}<a rel="category tag">{{ category }}</a>{% endfor %}</span>
+				<span>Category: {% for category in post.categories %}<a href="/categorys/{{ category }}.html" rel="category tag">{{ category }}</a>{% endfor %}</span>
 				<a href="{{ post.url }}#comments" title="Comments of {{ post.title }}">Comments</a>
 			</p>
 			{{ post.content }}
 		</div>
 {% endfor %}
+
+    {% if paginator.total_pages > 1 %}
+    <ol class="page-navigator">
+        {% for page in (1..paginator.total_pages) %}
+        <li{% if page == paginator.page %} class="current"{% endif %}>
+            <a href="/{%if page > 1 %}page{{ page }}/{% endif %}">{{ page }}</a>
+        </li>
+        {% endfor %}
+    </ol>
+    {% endif %}
 
 <!--
 <div id="pages">

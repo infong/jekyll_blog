@@ -1,19 +1,18 @@
-safe: true
-pygments: true
+safe:      true
+pygments:  true
+paginate:  6
 permalink: /:categories/:title.html
 
 author: Infong
-title: A good memory as bad written.
-email: clarelyf@gmail.com
+title:  Tech Notes
+email:  clarelyf@gmail.com
+description: "Post various computer-related technology and original articles, a good memory as bad written."
 
 # feedburner:
 #   id: feedburnerid
 
-google_analytics:
-  account: UA-24623558-3
-
-github:
-  username: infong
+#google_analytics:
+#  account: UA-24623558-3
 
 disqus:
-   id: agoodmemoryasbadwritten
+   id: inftechnotes
