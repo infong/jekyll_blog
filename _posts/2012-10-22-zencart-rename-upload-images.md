@@ -18,17 +18,24 @@ tags: [zencart, php]
 2. 如果想连上传目录也一起改掉的话，可以在 `ADMIN/includes/modules/new_product_preview.php` 的第 15 行插入：
 
         // 上传目录的变更
-        if(empty($_POST['img_dir'])) {
-          $_POST['img_dir'] = date('Ym') . '/';
-        }
-        if(!is_dir(DIR_FS_CATALOG_IMAGES . $_POST['img_dir'])) {
-          mkdir(DIR_FS_CATALOG_IMAGES . $_POST['img_dir']);
-        }
+        + if(empty($_POST['img_dir'])) {
+        +  $_POST['img_dir'] = date('Ym') . '/';
+        + }
+        + if(!is_dir(DIR_FS_CATALOG_IMAGES . $_POST['img_dir'])) {
+        +   mkdir(DIR_FS_CATALOG_IMAGES . $_POST['img_dir']);
+        + }
+        $products_image->set_destination(DIR_FS_CATALOG_IMAGES . $_POST['img_dir']);
 
-3. 如果有用到 Image_Handler 的话，也要进行相应的更改，约 90 行：
+3. 如果有用到 Image_Handler 的话，也要进行相应的更改，`ADMIN/includes/ih_manager.php`约 90 行：
 
-        if(empty($_POST['imgBaseDir'])) {
-          $_POST['imgBaseDir'] = date('Ym') . '/';
-        }
+      if ( $_POST['imgNewBaseDir'] != '') {
+        $data['imgBaseDir'] = $_POST['imgNewBaseDir'];
+      } else {
+      + if(empty($_POST['imgBaseDir'])) {
+      +   $_POST['imgBaseDir'] = date('Ym') . '/';
+      + }
+        $data['imgBaseDir'] = $_POST['imgBaseDir'];
+      }
+
         
 这样，上传图片的时候，就会按像 `images/201210/64c15fdbab0ccaa5f79875381ffccf86.jpg` 形式进行重命名了。
