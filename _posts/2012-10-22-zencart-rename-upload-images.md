@@ -28,14 +28,14 @@ tags: [zencart, php]
 
 3. 如果有用到 Image_Handler 的话，也要进行相应的更改，`ADMIN/includes/ih_manager.php`约 90 行：
 
-      if ( $_POST['imgNewBaseDir'] != '') {
-        $data['imgBaseDir'] = $_POST['imgNewBaseDir'];
-      } else {
-      + if(empty($_POST['imgBaseDir'])) {
-      +   $_POST['imgBaseDir'] = date('Ym') . '/';
-      + }
-        $data['imgBaseDir'] = $_POST['imgBaseDir'];
-      }
+        if ( $_POST['imgNewBaseDir'] != '') {
+          $data['imgBaseDir'] = $_POST['imgNewBaseDir'];
+        } else {
+        + if(empty($_POST['imgBaseDir'])) {
+        +   $_POST['imgBaseDir'] = date('Ym') . '/';
+        + }
+          $data['imgBaseDir'] = $_POST['imgBaseDir'];
+        }
 
         
 这样，上传图片的时候，就会按像 `images/201210/64c15fdbab0ccaa5f79875381ffccf86.jpg` 形式进行重命名了。
