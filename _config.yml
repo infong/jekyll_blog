@@ -1,0 +1,18 @@
+safe:      true
+pygments:  true
+paginate:  6
+permalink: /:categories/:title.html
+
+author: Infong
+title:  Tech Notes
+email:  clarelyf@gmail.com
+description: "Post various computer-related technology and original articles, a good memory as bad written."
+
+# feedburner:
+#   id: feedburnerid
+
+#google_analytics:
+#  account: UA-24623558-3
+
+disqus:
+   id: inftechnotes
